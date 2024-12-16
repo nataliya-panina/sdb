@@ -19,7 +19,9 @@
 Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.
 
 ## Решение
-docker run --name memcached --rm -d -p 11211:11211 memcached
+
+docker run --name memcached --rm -d -p 11211:11211 memcached  
+
 ![image](https://github.com/user-attachments/assets/f0fee45d-e339-4b21-80bd-b91a1bba4fb5)
 
 
