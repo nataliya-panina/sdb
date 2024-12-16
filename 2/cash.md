@@ -33,9 +33,10 @@ docker run --name memcached --rm -d -p 11211:11211 memcached
 Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.
 
 ## Решение
-telnet localhost 11211
-set name 0 10 5
-sasha
+telnet localhost 11211  
+set name 0 10 5  
+sasha  
+
 ![image](https://github.com/user-attachments/assets/3a6743ff-4393-4191-a934-7b6e14621550)
 
 
