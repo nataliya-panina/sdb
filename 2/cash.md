@@ -59,4 +59,6 @@ sasha # Установка значения ключа
 
 ## Решение
 
+![image](https://github.com/user-attachments/assets/1927b554-03c9-4c36-9eca-968880b1216d)
+
 ---
