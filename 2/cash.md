@@ -48,9 +48,8 @@ sasha # Установка значения ключа
 Через redis-cli достаньте все записанные ключи и значения из базы, приведите скриншот этой операции.
 
 ## Решение
-
-
-
+![image](https://github.com/user-attachments/assets/22b30aa4-8265-4a5d-a789-2eace402949a)
+![image](https://github.com/user-attachments/assets/a4388ad4-f5ff-4de5-ad13-7b13423caccd)
 
 ---
 # Задание 5*. Работа с числами
