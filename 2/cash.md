@@ -20,7 +20,7 @@
 
 ## Решение
 
-Запускать memcached буду в докере
+Запускать memcached буду в докере:  
 docker run --name memcached --rm -d -p 11211:11211 memcached  
 
 ![image](https://github.com/user-attachments/assets/f0fee45d-e339-4b21-80bd-b91a1bba4fb5)
