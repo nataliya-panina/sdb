@@ -16,6 +16,7 @@ services:
     ports:
       - 9200:9200
 ```
+docker copmpose up -d
 
 ![image](https://github.com/user-attachments/assets/cde67149-3380-4fe4-9e8d-84aba4b699ca)
 
