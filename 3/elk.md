@@ -41,7 +41,7 @@ curl -s http://localhost:9200/_cluster/health?pretty
    depends_on:
     - elasticsearch
    environment:
-    - ELASTICSEARCH_HOSTS=http://elasticearch:9200
+    - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
 ```
 ```
 docker compose up -d
