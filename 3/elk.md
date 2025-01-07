@@ -32,7 +32,7 @@ curl -s http://localhost:9200/_cluster/health?pretty
 
 ## Решение
 
-compose.yml  
+В compose.yml дописываю сервис kibana:
 ```
   kibana:
    image: kibana:8.12.2
