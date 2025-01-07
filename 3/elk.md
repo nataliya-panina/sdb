@@ -64,8 +64,18 @@ sudo apt install nginx # установка
 sudo systemctl status nginx # проверка статуса
 sudo nano /etc/nginx/nginx.conf ==> access_log: syslog:server=192.168.115.128:5440; # В файле конфигурации отправляю access_log на ВМ с ELK по протоколу syslog
 ```
+
 В файле compose.yml дописываю сервис logstash  
+
 ```
+
+
+```
+
+В файле logstash.yml описываю получение логов из nginx  и передачу из в elasticsearch  
+
+```
+
 
 ```
 
