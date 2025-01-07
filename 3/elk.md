@@ -4,6 +4,20 @@
 Приведите скриншот команды 'curl -X GET 'localhost:9200/_cluster/health?pretty', сделанной на сервере с установленным Elasticsearch. Где будет виден нестандартный cluster_name.
 
 ## Решение
+compose.yml:
+```
+services:
+  elasticsearch:
+    image: elasticsearch:8.12.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - cluster.name=nataliyas_cluster
+    ports:
+      - 9200:9200
+```
+
+![image](https://github.com/user-attachments/assets/cde67149-3380-4fe4-9e8d-84aba4b699ca)
 
 ---
 # Задание 2. Kibana
