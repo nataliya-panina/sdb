@@ -57,6 +57,11 @@ http://127.0.0.1:5601/app/dev_tools#/console
 Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.
 
 ## Решение
+```
+sudo apt install nginx
+sudo systemctl status nginx
+sudo nano /etc/nginx/nginx.conf ==> access_log: syslog:server=192.168.115.128:5440
+```
 
 ---
 # Задание 4. Filebeat.
