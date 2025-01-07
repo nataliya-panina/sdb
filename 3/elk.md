@@ -32,6 +32,24 @@ curl -s http://localhost:9200/_cluster/health?pretty
 
 ## Решение
 
+compose.yml  
+```
+  kibana:
+   image: kibana:8.12.2
+   ports:
+     - 5601:5601
+   depends_on:
+    - elasticsearch
+   environment:
+    - ELASTICSEARCH_HOSTS=http://elasticearch:9200
+```
+```
+docker compose up -d
+http://127.0.0.1:5601/app/dev_tools#/console
+```
+
+![image](https://github.com/user-attachments/assets/3b868019-8b48-4426-bae0-1f7097185ca7)
+
 ---
 # Задание 3. Logstash
 Установите и запустите Logstash и Nginx. С помощью Logstash отправьте access-лог Nginx в Elasticsearch.
