@@ -57,11 +57,18 @@ http://127.0.0.1:5601/app/dev_tools#/console
 Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.
 
 ## Решение
+
+Установка nginx на отдельную ВМ:
 ```
-sudo apt install nginx
-sudo systemctl status nginx
-sudo nano /etc/nginx/nginx.conf ==> access_log: syslog:server=192.168.115.128:5440
+sudo apt install nginx # установка
+sudo systemctl status nginx # проверка статуса
+sudo nano /etc/nginx/nginx.conf ==> access_log: syslog:server=192.168.115.128:5440; # В файле конфигурации отправляю access_log на ВМ с ELK по протоколу syslog
 ```
+В файле compose.yml дописываю сервис logstash  
+```
+
+```
+
 
 ---
 # Задание 4. Filebeat.
