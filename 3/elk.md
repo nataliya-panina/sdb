@@ -48,7 +48,7 @@ docker compose up -d
 http://127.0.0.1:5601/app/dev_tools#/console
 ```
 
-![image](https://github.com/user-attachments/assets/3b868019-8b48-4426-bae0-1f7097185ca7)
+![image](https://github.com/user-attachments/assets/fc767d53-3397-4b3d-ae48-760270443bd6)
 
 ---
 # Задание 3. Logstash
