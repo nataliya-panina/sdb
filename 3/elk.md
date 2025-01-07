@@ -16,7 +16,11 @@ services:
     ports:
       - 9200:9200
 ```
-docker copmpose up -d
+
+```
+docker compose up -d  
+curl -s http://localhost:9200/_cluster/health?pretty  
+```
 
 ![image](https://github.com/user-attachments/assets/cde67149-3380-4fe4-9e8d-84aba4b699ca)
 
