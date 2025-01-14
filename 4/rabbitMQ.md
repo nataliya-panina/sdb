@@ -6,6 +6,26 @@
 
 ## Решение
 
+compose.yml:  
+
+```
+services:
+  rabbitmq1:
+    image: rabbitmq:3.10.7-management
+    hostname: rabbitmq1
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+      - RABBITMQ_CONFIG_FILE=/config/rabbitmq
+      - RABBITMQ_NODE_PORT=5672
+    volumes:
+      - ./config:/config
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+```
 ---
 # Задание 2. Отправка и получение сообщений
 Используя приложенные скрипты, проведите тестовую отправку и получение сообщения. Для отправки сообщений необходимо запустить скрипт producer.py.
