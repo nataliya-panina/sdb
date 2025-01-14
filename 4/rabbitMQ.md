@@ -28,6 +28,7 @@ services:
 ```
 docker compose up -d
 ```
+![image](https://github.com/user-attachments/assets/4cc14404-aaef-4246-8659-ae9f4ca0542b)
 
 
 ---
