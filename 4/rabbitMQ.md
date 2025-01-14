@@ -15,15 +15,15 @@ services:
     hostname: rabbitmq1
     restart: always
     environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER} # переменные окружения описаны в файле .env
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
       - RABBITMQ_CONFIG_FILE=/config/rabbitmq
       - RABBITMQ_NODE_PORT=5672
     volumes:
       - ./config:/config
     ports:
-      - 15672:15672
-      - 5672:5672
+      - 15672:15672 # порт для обращения через вебинтерфейс
+      - 5672:5672 # порт для общения с приложениями
 ```
 ```
 docker compose up -d
