@@ -5,8 +5,12 @@
 
 ---
 ## Решение
-
-
+```
+USE sakila;
+SELECT DISTINCT district FROM address
+WHERE district LIKE 'K%a' AND district NOT LIKE '% %';
+```
+![image](https://github.com/user-attachments/assets/9a20a836-f850-4df8-a9e3-aff13683df13)
 
 ---
 
