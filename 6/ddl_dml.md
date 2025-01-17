@@ -61,35 +61,34 @@ customer         | customer_id
 ---
 
 ## Решение
-```
+
 
 Name	| Primary key
+---|---
 payment	| payment_id
 rental | rental_id
 customer|customer_id
-inventory	inventory_id
-store	    store_id
-staff	    staff_id
-address	address_id
-city	city_id
-actor	actor_id
-film_actor	actor_id, film_id
-film	film_id
-language	language_id
-film_category	film_id, category_id
-category	category_id
-sales_by_film_category	category_id
-film_text	film_id
-sales_by_store	sales_by_store_id
-actor_info	actor_id
-film_list	film_id
-nicer_but_slower_film_list	film_id
-staff_list	id
-customer_list	id
+inventory	| inventory_id
+store | store_id
+staff | staff_id
+address	| address_id
+city	| city_id
+actor	| actor_id
+film_actor	| actor_id, film_id
+film	| film_id
+language	| language_id
+film_category	| film_id, category_id
+category	| category_id
+sales_by_film_category	| category_id
+film_text	| film_id
+sales_by_store	| sales_by_store_id
+actor_info	| actor_id
+film_list	| film_id
+nicer_but_slower_film_list	| film_id
+staff_list	| id
+customer_list	| id
 ![image](https://github.com/user-attachments/assets/87018a9f-e03f-4c48-85d6-18d182dc1064)
 
-
-```
 
 ---
 
