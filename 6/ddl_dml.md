@@ -43,11 +43,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 SHOW GRANTS for 'sys_temp';
 ```
-![image](https://github.com/user-attachments/assets/5efd3408-916f-4393-80bb-9cbc3d4e06f0)
+![image](https://github.com/user-attachments/assets/0a65a25d-dadf-4953-bc69-b49706f5337a)
 
 ```
-
+Дальше у меня не получается восстановить БД из дампа. При выполнении скрипта получаю ошибку:
 ```
+![image](https://github.com/user-attachments/assets/4c29f0eb-30f2-4e18-889e-7b7fe4bfa318)
+
 ## Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
 
