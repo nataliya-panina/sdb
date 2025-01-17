@@ -46,11 +46,11 @@ SHOW GRANTS for 'sys_temp';
 ```
 ![image](https://github.com/user-attachments/assets/0a65a25d-dadf-4953-bc69-b49706f5337a)
 
-Дальше у меня не получается восстановить БД из дампа. Установила mysqldump. Пробовала все запускать из-под рута, результат тот же.   
-
-При выполнении скрипта получаю ошибку:
 
 ![image](https://github.com/user-attachments/assets/4c29f0eb-30f2-4e18-889e-7b7fe4bfa318)
+
+![image](https://github.com/user-attachments/assets/a649f342-bea9-4b82-9f0c-713c7663538e)
+
 
 ## Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
@@ -61,6 +61,35 @@ customer         | customer_id
 ---
 
 ## Решение
+```
+
+Name	| Primary key
+payment	| payment_id
+rental | rental_id
+customer|customer_id
+inventory	inventory_id
+store	    store_id
+staff	    staff_id
+address	address_id
+city	city_id
+actor	actor_id
+film_actor	actor_id, film_id
+film	film_id
+language	language_id
+film_category	film_id, category_id
+category	category_id
+sales_by_film_category	category_id
+film_text	film_id
+sales_by_store	sales_by_store_id
+actor_info	actor_id
+film_list	film_id
+nicer_but_slower_film_list	film_id
+staff_list	id
+customer_list	id
+![image](https://github.com/user-attachments/assets/87018a9f-e03f-4c48-85d6-18d182dc1064)
+
+
+```
 
 ---
 
