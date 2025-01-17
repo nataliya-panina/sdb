@@ -46,15 +46,14 @@ SHOW GRANTS for 'sys_temp';
 ```
 ![image](https://github.com/user-attachments/assets/0a65a25d-dadf-4953-bc69-b49706f5337a)
 
+Дамп не захотел работать,
 
 ![image](https://github.com/user-attachments/assets/4c29f0eb-30f2-4e18-889e-7b7fe4bfa318)
 
-Дамп не захотел работать,
+Пришлось вручную загружать скрипты:
 
 ![image](https://github.com/user-attachments/assets/a649f342-bea9-4b82-9f0c-713c7663538e)
 
-
-Пришлось вручную загружать скрипты:
 
 ![Простыня](https://github.com/nataliya-panina/sdb/blob/main/6/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%8B%D0%BD%D1%8F)
 
