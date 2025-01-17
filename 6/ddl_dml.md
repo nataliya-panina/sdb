@@ -37,6 +37,14 @@ CREATE USER 'sys_temp'@'%' IDENTIFIED BY 'secret';
 SELECT * FROM mysql.user;
 ```
 ![image](https://github.com/user-attachments/assets/001864eb-2f41-4c3a-82fc-c53ffce38526)
+
+```
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+SHOW GRANTS for 'sys_temp';
+```
+![image](https://github.com/user-attachments/assets/5efd3408-916f-4393-80bb-9cbc3d4e06f0)
+
 ```
 
 ```
