@@ -20,7 +20,13 @@ WHERE district LIKE 'K%a' AND district NOT LIKE '% %';
 
 ---
 ## Решение
+```sql
+SELECT DATE(payment_date), amount FROM payment
+WHERE amount > 10.00
+AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18';
+```
 
+![image](https://github.com/user-attachments/assets/76854fdd-be1a-450d-b306-7883bb7af10f)
 
 
 ---
