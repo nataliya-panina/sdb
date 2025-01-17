@@ -16,7 +16,8 @@
 
 Для смены типа аутентификации с sha2 используйте запрос:
 
-ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';  
+
 1.6. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.
 
 1.7. Восстановите дамп в базу данных.
@@ -45,9 +46,10 @@ SHOW GRANTS for 'sys_temp';
 ```
 ![image](https://github.com/user-attachments/assets/0a65a25d-dadf-4953-bc69-b49706f5337a)
 
-```
-Дальше у меня не получается восстановить БД из дампа. Пробовала все запускать из-под рута, результат тот же. При выполнении скрипта получаю ошибку:
-```
+Дальше у меня не получается восстановить БД из дампа. Установила mysqldump. Пробовала все запускать из-под рута, результат тот же.   
+
+При выполнении скрипта получаю ошибку:
+
 ![image](https://github.com/user-attachments/assets/4c29f0eb-30f2-4e18-889e-7b7fe4bfa318)
 
 ## Задание 2
