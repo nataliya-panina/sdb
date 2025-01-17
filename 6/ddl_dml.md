@@ -28,12 +28,18 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 ---
 
 ## Решение
-
-
-
+```
 docker run --name sql --rm -p 3306:3306 -e MYSQL_ROOT_PASSWORD=secret -dti mysql:8.0
+```
+```
+USE test;
+CREATE USER 'sys_temp'@'%' IDENTIFIED BY 'secret';
+SELECT * FROM mysql.user;
+```
+![image](https://github.com/user-attachments/assets/001864eb-2f41-4c3a-82fc-c53ffce38526)
+```
 
-
+```
 ## Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
 
