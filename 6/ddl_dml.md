@@ -85,9 +85,8 @@ sales_by_store	| sales_by_store_id
 actor_info	| actor_id
 film_list	| film_id
 nicer_but_slower_film_list	| film_id
-staff_list	| id
-customer_list	| id
-![image](https://github.com/user-attachments/assets/87018a9f-e03f-4c48-85d6-18d182dc1064)
+staff_list	| customer_id
+customer_list	| customer_id
 
 
 ---
