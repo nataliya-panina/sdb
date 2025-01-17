@@ -1,13 +1,13 @@
-USE sys;
+USE sys; # Переключение на использование базы sys
 
-CREATE USER 'sys_temp'@'%' IDENTIFIED BY 'secret';
+CREATE USER 'sys_temp'@'%' IDENTIFIED BY 'secret'; # Создание пользователя sys_temp
 
-SELECT * FROM mysql.user;
+SELECT * FROM mysql.user; # Вывод списка пользователей
 
-GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION; # Назначение полных прав
 
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES; # Обновление привилегий
 
-SHOW GRANTS for 'sys_temp';
+SHOW GRANTS for 'sys_temp'; # Вывод списка прав на пользователя sys_temp
 
-ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; # подключение к БД под пользователем sys_temp
