@@ -113,3 +113,8 @@ customer_list	| customer_id
 ## Решение
 
 ---
+![image](https://github.com/user-attachments/assets/7e2943ba-4663-49e9-9198-2e4eb031fd19)
+
+
+Вывод: Нельзя забрать привилегии, которых нет
+
