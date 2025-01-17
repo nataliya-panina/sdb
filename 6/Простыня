@@ -1,0 +1,13 @@
+USE sys;
+
+CREATE USER 'sys_temp'@'%' IDENTIFIED BY 'secret';
+
+SELECT * FROM mysql.user;
+
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+SHOW GRANTS for 'sys_temp';
+
+ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
