@@ -10,4 +10,5 @@
 8. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/8/README.md)
 
 
-https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html
+
+![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
