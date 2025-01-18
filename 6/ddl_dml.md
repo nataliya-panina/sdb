@@ -84,14 +84,6 @@ film	| film_id
 language	| language_id
 film_category	| film_id, category_id
 category	| category_id
-sales_by_film_category	| category_id
-film_text	| film_id
-sales_by_store	| sales_by_store_id
-actor_info	| actor_id
-film_list	| film_id
-nicer_but_slower_film_list	| film_id
-staff_list	| customer_id
-customer_list	| customer_id
 
 
 ---
@@ -119,5 +111,5 @@ REVOKE INSERT, UPDATE, DELETE ON sakila.* FROM 'sys_temp'@'%';
 ![image](https://github.com/user-attachments/assets/7e2943ba-4663-49e9-9198-2e4eb031fd19)
 
 
-Вывод: Нельзя забрать привилегии, которых нет
+Вывод: Нельзя забрать привилегии, которых нет. Поэтому были придуманы роли.
 
