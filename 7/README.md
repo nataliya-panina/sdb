@@ -36,8 +36,11 @@ AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18';
 
 ---
 ## Решение
-
-
+```sql
+USE sakila;
+SELECT * FROM rental
+ORDER BY rental_date DESC LIMIT 5;
+```
 
 ---
 
