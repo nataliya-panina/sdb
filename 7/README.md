@@ -42,6 +42,7 @@ SELECT * FROM rental
 ORDER BY rental_date DESC
 LIMIT 5;
 ```
+![image](https://github.com/user-attachments/assets/03795284-ff60-4666-8839-697614b0c588)
 
 ---
 
@@ -56,7 +57,11 @@ LIMIT 5;
 ---
 ## Решение
 
+```sql
+select customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) from customer where first_name='Kelly' OR first_name='Willie' AND active='1';
+```
 
+![image](https://github.com/user-attachments/assets/46c05170-36d9-4599-a6b6-7fff2e5f168b)
 
 ---
 # Дополнительные задания (со звёздочкой*)
