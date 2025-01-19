@@ -59,8 +59,8 @@ LIMIT 5;
 ## Решение
 
 ```sql
-select customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) from customer
-where first_name='Kelly' OR first_name='Willie'
+SELECT customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) FROM customer
+WHERE first_name='Kelly' OR first_name='Willie'
 AND active='1';
 ```
 
@@ -78,8 +78,8 @@ AND active='1';
 ---
 ## Решение
 ```sql
-select LEFT(email, position('@' IN email)-1) as fio,
-       RIGHT(email, position('@' IN email)+1) as domain
+SELECT LEFT(email, position('@' IN email)-1) AS fio,
+       RIGHT(email, position('@' IN email)+1) AS domain
 FROM customer
 LIMIT 20;
 ```
