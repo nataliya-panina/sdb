@@ -59,12 +59,12 @@ LIMIT 5;
 ## Решение
 
 ```sql
-SELECT customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) FROM customer
+SELECT customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name), active FROM customer
 WHERE first_name='Kelly' OR first_name='Willie'
 AND active='1';
 ```
 
-![image](https://github.com/user-attachments/assets/46c05170-36d9-4599-a6b6-7fff2e5f168b)
+![image](https://github.com/user-attachments/assets/6ce69f1e-6590-4a56-be1e-849526df367b)
 
 ---
 # Дополнительные задания (со звёздочкой*)
