@@ -59,7 +59,9 @@ LIMIT 5;
 ## Решение
 
 ```sql
-select customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) from customer where first_name='Kelly' OR first_name='Willie' AND active='1';
+select customer_id, LOWER(REPLACE(first_name, 'LL', 'PP')),LOWER(last_name) from customer
+where first_name='Kelly' OR first_name='Willie'
+AND active='1';
 ```
 
 ![image](https://github.com/user-attachments/assets/46c05170-36d9-4599-a6b6-7fff2e5f168b)
