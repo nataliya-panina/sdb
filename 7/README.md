@@ -77,8 +77,13 @@ AND active='1';
 
 ---
 ## Решение
-
-
+```sql
+select LEFT(email, position('@' IN email)-1) as fio,
+       RIGHT(email, position('@' IN email)+1) as domain
+FROM customer
+LIMIT 20;
+```
+![image](https://github.com/user-attachments/assets/d3a9ea6e-153b-4102-a76b-4cee126dba2e)
 
 ---
 
