@@ -35,7 +35,14 @@ ON st.store_id = cs.store_id;
 ---
 ## Решение
 
+```sql
+SELECT COUNT(*) 
+FROM film
+WHERE (SELECT avg(f.length) as average
+FROM film f) < film.length;
+```
 
+![image](https://github.com/user-attachments/assets/4018cd1c-5646-4b83-b4ff-7ce36bf2e677)
 
 ---
 
@@ -45,6 +52,11 @@ ON st.store_id = cs.store_id;
 ---
 ## Решение
 
+```sql
+
+
+
+```
 
 
 ---
