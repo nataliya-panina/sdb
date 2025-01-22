@@ -12,7 +12,7 @@
 ## Решение
 
 ```sql
-SELECT st.store_id, CONCAT(stf.first_name, ' ', stf.last_name) AS manager, ct.city, cs.nc
+SELECT st.store_id, CONCAT(stf.first_name, ' ', stf.last_name) AS manager, ct.city, cs.nc AS customers
 FROM store st
 JOIN staff stf ON st.manager_staff_id = stf.staff_id
 JOIN address a ON st.address_id = a.address_id
@@ -24,7 +24,8 @@ HAVING nc > 300) as cs
 ON st.store_id = cs.store_id;
 ```
 
-![image](https://github.com/user-attachments/assets/05cded72-e3e6-4a8a-b6a8-e213bc9f666e)
+![image](https://github.com/user-attachments/assets/0acde3ed-2b06-4e8d-afb8-6ec09ac14270)
+
 
 ---
 
