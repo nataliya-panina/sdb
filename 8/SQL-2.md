@@ -11,7 +11,19 @@
 ---
 ## Решение
 
+```sql
+select s.store_id, CONCAT(st.first_name, ' ', st.last_name) as manager, nc.customers
+From store s
+join staff st ON s.store_id = st.store_id
+Join (
+select COUNT(c.customer_id) as customers, c.store_id
+from customer c
+Group BY store_id
+HAVING COUNT(c.customer_id)  > '300') AS nc
+ON s.store_id = nc.store_id
+```
 
+![image](https://github.com/user-attachments/assets/8704060e-0dc3-41e3-a998-84f915fbb60d)
 
 ---
 
