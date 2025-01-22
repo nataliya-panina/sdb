@@ -20,12 +20,11 @@ JOIN city ct ON a.city_id = ct.city_id
 JOIN (SELECT store_id, COUNT(*) nc
 FROM customer
 GROUP BY store_id
-HAVING Count(*) > 300) as cs
+HAVING nc > 300) as cs
 ON st.store_id = cs.store_id;
 ```
 
-![image](https://github.com/user-attachments/assets/e5304e1a-b0b0-4e93-979f-2a50ca48eafc)
-
+![image](https://github.com/user-attachments/assets/05cded72-e3e6-4a8a-b6a8-e213bc9f666e)
 
 ---
 
