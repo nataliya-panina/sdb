@@ -12,18 +12,20 @@
 ## Решение
 
 ```sql
-select s.store_id, CONCAT(st.first_name, ' ', st.last_name) as manager, nc.customers
-From store s
-join staff st ON s.store_id = st.store_id
-Join (
-select COUNT(c.customer_id) as customers, c.store_id
-from customer c
-Group BY store_id
-HAVING COUNT(c.customer_id)  > '300') AS nc
-ON s.store_id = nc.store_id
+SELECT st.store_id, CONCAT(stf.first_name, ' ', stf.last_name) AS manager, ct.city, cs.nc
+FROM store st
+JOIN staff stf ON st.manager_staff_id = stf.staff_id
+JOIN address a ON st.address_id = a.address_id
+JOIN city ct ON a.city_id = ct.city_id
+JOIN (SELECT store_id, COUNT(*) nc
+FROM customer
+GROUP BY store_id
+HAVING Count(*) > 300) as cs
+ON st.store_id = cs.store_id;
 ```
 
-![image](https://github.com/user-attachments/assets/8704060e-0dc3-41e3-a998-84f915fbb60d)
+![image](https://github.com/user-attachments/assets/e5304e1a-b0b0-4e93-979f-2a50ca48eafc)
+
 
 ---
 
