@@ -100,8 +100,23 @@ GROUP BY c.customer_id
 
 Эксперимент с индексом на payment_data:
 ---
+```sql
+Create INDEX payment_date ON payment(payment_date);
+
+EXPLAIN ANALYZE
+SELECT CONCAT(last_name, ' ', first_name) client, SUM(p.amount)
+FROM rental r
+JOIN payment p ON p.rental_id = r.rental_id
+JOIN customer c ON c.customer_id = r.customer_id
+Where DATE(rental_date) = DATE(payment_date)
+AND p.payment_date >= '2005-07-30' and p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
+GROUP BY c.customer_id
+;
+```
+
 ![image](https://github.com/user-attachments/assets/dd95df56-770d-4830-b041-802ca61ada32)
 
+При использовании индекса на payment_date время запроса уменьшилось вдвое
 ```
 -> Table scan on <temporary>  (actual time=3.19..3.23 rows=391 loops=1)
     -> Aggregate using temporary table  (actual time=3.19..3.19 rows=391 loops=1)
@@ -116,8 +131,7 @@ GROUP BY c.customer_id
 
 Вывод:  
 ---
-После оптимизации (написания заново) запроса время его выполнения снизилось с 9с до нескольких мс, удалось избавиться от ненужных таблиц, еще, наверное, можно попробовать проиндексировать даты...
-
+После оптимизации (написания заново) запроса время его выполнения снизилось с 9с до 13 мс, а при индексации даты платежа еще вдвое. Удалось избавиться от ненужных таблиц и условий, которые загружают память и увеличивают время обработки запроса.
 ---
 Дополнительные задания (со звёздочкой*)
 ---
