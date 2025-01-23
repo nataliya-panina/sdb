@@ -110,12 +110,12 @@ FROM rental r
 JOIN payment p ON p.payment_date = r.rental_date -- Так как теперь эти поля имеют индекс, то можно соединять таблицы по ним
 JOIN customer c ON c.customer_id = r.customer_id
 -- Where DATE(rental_date) = DATE(payment_date)
-AND p.payment_date >= '2005-07-30' and p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
+WHERE p.payment_date >= '2005-07-30' and p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
 GROUP BY c.customer_id
 ;
 ```
 
-![image](https://github.com/user-attachments/assets/dd95df56-770d-4830-b041-802ca61ada32)
+![image](https://github.com/user-attachments/assets/d3cb9079-8faf-4e43-91db-3bd02d7a29d9)
 
 При использовании индекса на payment_date время запроса уменьшилось вдвое
 
