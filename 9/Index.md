@@ -62,7 +62,8 @@ and i.inventory_id = r.inventory_id; -- таблица inventory избыточ�
                         -> Single-row covering index lookup on i using PRIMARY (inventory_id=r.inventory_id)  (cost=250e-6 rows=1) (actual time=216e-6..256e-6 rows=1 loops=642000)
 ```
 
-Из шести таблиц можно оставить три:	
+Из шести таблиц можно оставить три:	  
+
 ![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)
 
 
