@@ -53,12 +53,12 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ```sql
 EXPLAIN ANALYZE
 select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
-sum(p.amount) over (partition by c.customer_id, f.title)
+sum(p.amount) over (partition by c.customer_id, f.title) -- И его платежей
 from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
-where date(p.payment_date) = '2005-07-30' 
-and p.payment_date = r.rental_date 
-and r.customer_id = c.customer_id 
-and i.inventory_id = r.inventory_id;
+where date(p.payment_date) = '2005-07-30' -- На конкретную дату
+and p.payment_date = r.rental_date -- При этом Дата платежа = дате аренды, при JOIN можно связать по rental_id (индекс)
+and r.customer_id = c.customer_id -- Отбор по клиенту
+and i.inventory_id = r.inventory_id; -- Таблица inventory избыточна
 ```
 
 
