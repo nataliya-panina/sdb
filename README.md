@@ -8,6 +8,7 @@
 6. ![DDL/DML](https://github.com/nataliya-panina/sdb/blob/main/6/ddl_dml.md)
 7. ![SQL-1](https://github.com/nataliya-panina/sdb/blob/main/7/SQL-1.md)
 8. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/8/SQL-2.md)
+9. ![Index](https://github.com/nataliya-panina/sdb/blob/main/9/Index.md)
 
 
 
