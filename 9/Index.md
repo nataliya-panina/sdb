@@ -36,12 +36,12 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ```sql
 EXPLAIN ANALYZE
 select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
-sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по клиенту - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
+sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по клиенту - > Таблица film избыточна, ее данные нигде не фигурируют
 from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
 where date(p.payment_date) = '2005-07-30' -- На конкретную дату
 and p.payment_date = r.rental_date -- С условием, что дата платежа = дате аренды
 and r.customer_id = c.customer_id -- Отбор по клиенту > Можно сделать JOIN клиента с его арендой по индексам customer_id
-and i.inventory_id = r.inventory_id; -- таблица inventory избыточна, сгруппировать можно по invertory_id из таблицы rental
+and i.inventory_id = r.inventory_id; -- таблица inventory избыточна, для сопоставления аренды и платежа подойдет rental_id из таблицы rental
 ```
 Выполнение EXPLAIN ANALYZE:
 ```
@@ -67,6 +67,7 @@ and i.inventory_id = r.inventory_id; -- таблица inventory избыточ�
 
 ![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)  
 
+Новый запрос будет выглядеть так:
 ```sql
 SELECT CONCAT(c.last_name, ' ', first_name) client, SUM(p.amount)
 FROM rental r
@@ -89,6 +90,10 @@ GROUP BY c.customer_id
 ```
 
 ![image](https://github.com/user-attachments/assets/409f8c28-8a74-4514-9f57-3f0fc2554c7f)
+
+Вывод:  
+---
+После оптимизации запроса время его выполнения снизилось с 9с до нескольких мс, удалось избавиться от ненужных таблиц, хотя, наверное, можно попробовать проиндексировать даты...
 
 ---
 Дополнительные задания (со звёздочкой*)
