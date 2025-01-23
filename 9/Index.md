@@ -98,6 +98,22 @@ GROUP BY c.customer_id
 
 ![image](https://github.com/user-attachments/assets/409f8c28-8a74-4514-9f57-3f0fc2554c7f)
 
+Эксперимент с индексом на payment_data:
+---
+![image](https://github.com/user-attachments/assets/dd95df56-770d-4830-b041-802ca61ada32)
+
+```
+-> Table scan on <temporary>  (actual time=3.19..3.23 rows=391 loops=1)
+    -> Aggregate using temporary table  (actual time=3.19..3.19 rows=391 loops=1)
+        -> Nested loop inner join  (cost=729 rows=634) (actual time=0.459..2.6 rows=634 loops=1)
+            -> Nested loop inner join  (cost=507 rows=634) (actual time=0.451..1.94 rows=634 loops=1)
+                -> Filter: (p.rental_id is not null)  (cost=286 rows=634) (actual time=0.436..1.07 rows=634 loops=1)
+                    -> Index range scan on p using payment_date over ('2005-07-30 00:00:00' <= payment_date < '2005-07-31 00:00:00'), with index condition: ((p.payment_date >= TIMESTAMP'2005-07-30 00:00:00') and (p.payment_date < <cache>(('2005-07-30' + interval 1 day))))  (cost=286 rows=634) (actual time=0.434..1.03 rows=634 loops=1)
+                -> Filter: (cast(r.rental_date as date) = cast(p.payment_date as date))  (cost=0.25 rows=1) (actual time=0.00118..0.00125 rows=1 loops=634)
+                    -> Single-row index lookup on r using PRIMARY (rental_id=p.rental_id)  (cost=0.25 rows=1) (actual time=0.00101..0.00103 rows=1 loops=634)
+            -> Single-row index lookup on c using PRIMARY (customer_id=r.customer_id)  (cost=0.25 rows=1) (actual time=899e-6..921e-6 rows=1 loops=634)
+``` 
+
 Вывод:  
 ---
 После оптимизации (написания заново) запроса время его выполнения снизилось с 9с до нескольких мс, удалось избавиться от ненужных таблиц, еще, наверное, можно попробовать проиндексировать даты...
