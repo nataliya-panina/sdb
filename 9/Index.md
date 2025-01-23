@@ -32,7 +32,26 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ---
 ## Решение
-
+```
+-> Table scan on <temporary>  (cost=2.5..2.5 rows=0) (actual time=9119..9119 rows=391 loops=1)
+    -> Temporary table with deduplication  (cost=0..0 rows=0) (actual time=9119..9119 rows=391 loops=1)
+        -> Window aggregate with buffering: sum(payment.amount) OVER (PARTITION BY c.customer_id,f.title )   (actual time=4041..8798 rows=642000 loops=1)
+            -> Sort: c.customer_id, f.title  (actual time=4041..4166 rows=642000 loops=1)
+                -> Stream results  (cost=10.1e+6 rows=15.6e+6) (actual time=1.14..2906 rows=642000 loops=1)
+                    -> Nested loop inner join  (cost=10.1e+6 rows=15.6e+6) (actual time=1.12..2495 rows=642000 loops=1)
+                        -> Nested loop inner join  (cost=8.51e+6 rows=15.6e+6) (actual time=1.11..2185 rows=642000 loops=1)
+                            -> Nested loop inner join  (cost=6.95e+6 rows=15.6e+6) (actual time=1.1..1847 rows=642000 loops=1)
+                                -> Inner hash join (no condition)  (cost=1.54e+6 rows=15.4e+6) (actual time=1.07..90.4 rows=634000 loops=1)
+                                    -> Filter: (cast(p.payment_date as date) = '2005-07-30')  (cost=1.61 rows=15400) (actual time=0.462..15.5 rows=634 loops=1)
+                                        -> Table scan on p  (cost=1.61 rows=15400) (actual time=0.441..9.5 rows=16044 loops=1)
+                                    -> Hash
+                                        -> Covering index scan on f using idx_title  (cost=103 rows=1000) (actual time=0.0723..0.482 rows=1000 loops=1)
+                                -> Covering index lookup on r using rental_date (rental_date=p.payment_date)  (cost=0.25 rows=1.01) (actual time=0.00179..0.00253 rows=1.01 loops=634000)
+                            -> Single-row index lookup on c using PRIMARY (customer_id=r.customer_id)  (cost=250e-6 rows=1) (actual time=257e-6..296e-6 rows=1 loops=642000)
+                        -> Single-row covering index lookup on i using PRIMARY (inventory_id=r.inventory_id)  (cost=250e-6 rows=1) (actual time=216e-6..256e-6 rows=1 loops=642000)
+```
+```
+```
 
 
 ---
