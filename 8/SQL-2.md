@@ -104,3 +104,15 @@ WHERE r.rental_id IS NULL
 ;
 ```
 ![image](https://github.com/user-attachments/assets/e65933bf-cab1-41fe-ad41-1187785442f7)
+
+```sql
+SELECT f.film_id, f.title, i.inventory_id, r.rental_id FROM film f
+LEFT JOIN inventory i ON f.film_id = i.film_id
+LEFT JOIN rental r ON i.inventory_id = r.inventory_id
+WHERE r.rental_id IS NULL
+;
+```
+
+
+![image](https://github.com/user-attachments/assets/42e64a23-fbc7-4674-893e-14241fa0816b)
+
