@@ -32,6 +32,17 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ---
 ## Решение
+```sql
+EXPLAIN ANALYZE
+select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
+sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по названию фильма - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
+from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
+where date(p.payment_date) = '2005-07-30' -- На конкретную дату
+and p.payment_date = r.rental_date -- При этом Дата платежа = дате аренды, при JOIN можно связать по rental_id (индекс)
+and r.customer_id = c.customer_id -- Отбор по клиенту > Можно сделать JOIN клиента с его арендой по индексам customer_id
+and i.inventory_id = r.inventory_id; -- 
+```
+Выполнение EXPLAIN ANALYZE:
 ```
 -> Table scan on <temporary>  (cost=2.5..2.5 rows=0) (actual time=9119..9119 rows=391 loops=1)
     -> Temporary table with deduplication  (cost=0..0 rows=0) (actual time=9119..9119 rows=391 loops=1)
@@ -50,16 +61,7 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
                             -> Single-row index lookup on c using PRIMARY (customer_id=r.customer_id)  (cost=250e-6 rows=1) (actual time=257e-6..296e-6 rows=1 loops=642000)
                         -> Single-row covering index lookup on i using PRIMARY (inventory_id=r.inventory_id)  (cost=250e-6 rows=1) (actual time=216e-6..256e-6 rows=1 loops=642000)
 ```
-```sql
-EXPLAIN ANALYZE
-select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
-sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по названию фильма - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
-from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
-where date(p.payment_date) = '2005-07-30' -- На конкретную дату
-and p.payment_date = r.rental_date -- При этом Дата платежа = дате аренды, при JOIN можно связать по rental_id (индекс)
-and r.customer_id = c.customer_id -- Отбор по клиенту > Можно сделать JOIN клиента с его арендой по индексам customer_id
-and i.inventory_id = r.inventory_id; -- 
-```
+
 	
 ![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)
 
