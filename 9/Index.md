@@ -19,7 +19,6 @@ FROM information_schema.TABLES
 ---
 ## Задание 2
 ---
-![image](https://github.com/user-attachments/assets/2d7038b0-d9fe-4c1c-9dbe-c6c023ef04a5)
 
 Выполните explain analyze следующего запроса:
 
@@ -33,7 +32,7 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ---
 ## Решение
-
+![image](https://github.com/user-attachments/assets/2d7038b0-d9fe-4c1c-9dbe-c6c023ef04a5)
 ```sql
 EXPLAIN ANALYZE
 select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
