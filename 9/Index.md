@@ -117,6 +117,7 @@ GROUP BY c.customer_id
 ![image](https://github.com/user-attachments/assets/dd95df56-770d-4830-b041-802ca61ada32)
 
 При использовании индекса на payment_date время запроса уменьшилось вдвое
+
 ```
 -> Table scan on <temporary>  (actual time=3.19..3.23 rows=391 loops=1)
     -> Aggregate using temporary table  (actual time=3.19..3.19 rows=391 loops=1)
