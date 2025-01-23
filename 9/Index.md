@@ -19,6 +19,7 @@ FROM information_schema.TABLES
 ---
 ## Задание 2
 ---
+![image](https://github.com/user-attachments/assets/2d7038b0-d9fe-4c1c-9dbe-c6c023ef04a5)
 
 Выполните explain analyze следующего запроса:
 
@@ -32,13 +33,14 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ---
 ## Решение
+
 ```sql
 EXPLAIN ANALYZE
 select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
 sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по названию фильма - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
 from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
 where date(p.payment_date) = '2005-07-30' -- На конкретную дату
-and p.payment_date = r.rental_date -- При этом Дата платежа = дате аренды, при JOIN можно связать по rental_id (индекс)
+and p.payment_date = r.rental_date -- С условием, что дата платежа = дате аренды
 and r.customer_id = c.customer_id -- Отбор по клиенту > Можно сделать JOIN клиента с его арендой по индексам customer_id
 and i.inventory_id = r.inventory_id; -- таблица inventory избыточна, сгруппировать можно по invertory_id из таблицы rental
 ```
