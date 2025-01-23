@@ -20,12 +20,12 @@ FROM customer
 GROUP BY store_id
 HAVING nc > 300) as cs
 ON st.store_id = cs.store_id
-LEFT JOIN staff stf ON st.manager_staff_id = stf.staff_id
-LEFT JOIN address a ON st.address_id = a.address_id
-LEFT JOIN city ct ON a.city_id = ct.city_id
+JOIN staff stf ON st.manager_staff_id = stf.staff_id
+JOIN address a ON st.address_id = a.address_id
+JOIN city ct ON a.city_id = ct.city_id
 ;
 ```
-![image](https://github.com/user-attachments/assets/3b189ef5-99b9-42ea-b6f2-9b0cef65a67e)
+![image](https://github.com/user-attachments/assets/44d79fe4-398d-4785-bbec-3fa8e6e8effc)
 
 
 ---
