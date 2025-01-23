@@ -53,11 +53,18 @@ FROM film f) < film.length;
 ## Решение
 
 ```sql
-
-
-
+SELECT gr.best_month, amount, gr.rents
+FROM(SELECT SUM(amount) amount, MONTH(payment_date) mon
+FROM payment 
+GROUP BY mon) as a
+JOIN
+(SELECT MONTH(rental_date) best_month, COUNT(*) rents
+FROM rental r
+GROUP BY best_month) gr ON a.mon = gr.best_month
+ORDER BY amount DESC
+LIMIT 1;
 ```
-
+![image](https://github.com/user-attachments/assets/650a6897-9b50-44aa-83a0-d14330c91e5c)
 
 ---
 
