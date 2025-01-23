@@ -50,7 +50,15 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
                             -> Single-row index lookup on c using PRIMARY (customer_id=r.customer_id)  (cost=250e-6 rows=1) (actual time=257e-6..296e-6 rows=1 loops=642000)
                         -> Single-row covering index lookup on i using PRIMARY (inventory_id=r.inventory_id)  (cost=250e-6 rows=1) (actual time=216e-6..256e-6 rows=1 loops=642000)
 ```
-```
+```sql
+EXPLAIN ANALYZE
+select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
+sum(p.amount) over (partition by c.customer_id, f.title)
+from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
+where date(p.payment_date) = '2005-07-30' 
+and p.payment_date = r.rental_date 
+and r.customer_id = c.customer_id 
+and i.inventory_id = r.inventory_id;
 ```
 
 
