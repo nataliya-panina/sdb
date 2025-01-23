@@ -69,7 +69,7 @@ and i.inventory_id = r.inventory_id; -- таблица inventory избыточ�
 
 В таблице rental содержится наибольшее количество интересующей нас информации: rental_id, customer_id, payment_date, поэтому все остальные данные будем присоединять к ней.
 - По ключу rental_id - таблица payment, чтобы сопоставить платеж с арендой
-- По ключу customer_id - таблица customer, из которой можно достать имя и фамилию клиента.
+- По ключу customer_id - таблица customer, из которой можно достать имя и фамилию клиента.  
 Новый запрос будет выглядеть так:
 
 ```sql
@@ -82,6 +82,8 @@ AND DATE(payment_date) = DATE(rental_date)
 GROUP BY c.customer_id
 ;
 ```
+Его EXPLAIN ANALYZE:
+
 ```
 -> Group aggregate: sum(p.amount)  (cost=12865 rows=599) (actual time=0.383..27.6 rows=391 loops=1)
     -> Nested loop inner join  (cost=11265 rows=16005) (actual time=0.298..27.2 rows=634 loops=1)
@@ -92,6 +94,7 @@ GROUP BY c.customer_id
         -> Filter: (cast(p.payment_date as date) = cast(r.rental_date as date))  (cost=0.25 rows=1) (actual time=0.00327..0.00386 rows=1 loops=634)
             -> Index lookup on p using fk_payment_rental (rental_id=r.rental_id)  (cost=0.25 rows=1) (actual time=0.00301..0.00352 rows=1 loops=634)
 ```
+То, что получилось:
 
 ![image](https://github.com/user-attachments/assets/409f8c28-8a74-4514-9f57-3f0fc2554c7f)
 
