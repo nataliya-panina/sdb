@@ -67,7 +67,7 @@ and i.inventory_id = r.inventory_id; -- таблица inventory избыточ�
 
 ![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)  
 
-В таблице rental содержится наибольшее количество интересующей нас информации: rental_id, customer_id, payment_date, поэтому все остальные данные будем присоединять к ней.
+В таблице rental содержится наибольшее количество интересующей нас информации: rental_id, customer_id, rental_date, поэтому все остальные данные будем присоединять к ней.
 - По ключу rental_id - таблица payment, чтобы сопоставить платеж с арендой
 - По ключу customer_id - таблица customer, из которой можно достать имя и фамилию клиента.  
 Новый запрос будет выглядеть так:
