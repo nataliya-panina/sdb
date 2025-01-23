@@ -128,5 +128,5 @@ such as quadtrees, k-d trees, and radix trees (tries).
 GIN | - | GIN indexes are “inverted indexes” which are appropriate for data values that contain multiple com-
 ponent values, such as arrays.
 
-![Документация](https://postgrespro.ru/docs/postgresql)
+[Документация](https://postgrespro.ru/docs/postgresql)
 ---
