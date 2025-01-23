@@ -128,11 +128,13 @@ GROUP BY c.customer_id
                 -> Filter: (cast(r.rental_date as date) = cast(p.payment_date as date))  (cost=0.25 rows=1) (actual time=0.00118..0.00125 rows=1 loops=634)
                     -> Single-row index lookup on r using PRIMARY (rental_id=p.rental_id)  (cost=0.25 rows=1) (actual time=0.00101..0.00103 rows=1 loops=634)
             -> Single-row index lookup on c using PRIMARY (customer_id=r.customer_id)  (cost=0.25 rows=1) (actual time=899e-6..921e-6 rows=1 loops=634)
-``` 
+```
 
 Вывод:  
 ---
+
 После оптимизации (написания заново) запроса время его выполнения снизилось с 9с до 13 мс, а при индексации даты платежа еще вдвое. Удалось избавиться от ненужных таблиц и условий, которые загружают память и увеличивают время обработки запроса.
+
 ---
 Дополнительные задания (со звёздочкой*)
 ---
