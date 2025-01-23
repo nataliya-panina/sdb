@@ -36,7 +36,7 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ```sql
 EXPLAIN ANALYZE
 select distinct concat(c.last_name, ' ', c.first_name), -- Поиск уникальных фио
-sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по названию фильма - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
+sum(p.amount) over (partition by c.customer_id, f.title) -- И их платежей с группировкой по клиенту - > Таблица film избыточна, в таблице rental содержится инфо о фильме в виде inventory_id
 from payment p, rental r, customer c, inventory i, film f -- Из всех этих таблиц
 where date(p.payment_date) = '2005-07-30' -- На конкретную дату
 and p.payment_date = r.rental_date -- С условием, что дата платежа = дате аренды
@@ -65,9 +65,18 @@ and i.inventory_id = r.inventory_id; -- таблица inventory избыточ�
 
 Из шести таблиц можно оставить три:	  
 
-![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)
+![image](https://github.com/user-attachments/assets/8ecfe17b-bf0a-4a3f-8001-beb84890ea0b)  
 
-
+```sql
+SELECT CONCAT(c.last_name, ' ', first_name) client, SUM(p.amount)
+FROM rental r
+JOIN payment p ON p.rental_id = r.rental_id
+JOIN customer c ON c.customer_id = r.customer_id
+Where DATE(rental_date) = '2005-07-30'
+AND DATE(payment_date) = DATE(rental_date)
+GROUP BY c.customer_id
+;
+```
 ---
 Дополнительные задания (со звёздочкой*)
 ---
