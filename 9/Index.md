@@ -9,6 +9,12 @@
 ---
 ## Решение
 
+```sql
+SELECT SUM(INDEX_LENGTH)/SUM(DATA_LENGTH)*100 
+FROM information_schema.TABLES
+;
+```
+![image](https://github.com/user-attachments/assets/0ef8f93a-2109-47e2-9400-dfafb99f675f)
 
 ---
 ## Задание 2
