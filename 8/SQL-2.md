@@ -95,3 +95,12 @@ GROUP BY staff_id
 Найдите фильмы, которые ни разу не брали в аренду.
 
 ---
+## Решение
+```sql
+SELECT i.film_id, f.title, i.inventory_id, r.rental_id FROM inventory i
+JOIN film f ON i.film_id = f.film_id
+LEFT JOIN rental r ON i.inventory_id = r.inventory_id
+WHERE r.rental_id IS NULL
+;
+```
+![image](https://github.com/user-attachments/assets/e65933bf-cab1-41fe-ad41-1187785442f7)
