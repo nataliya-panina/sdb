@@ -77,8 +77,18 @@ LIMIT 1;
 
 ---
 ## Решение
-
-
+```sql
+SELECT	staff_id, COUNT(*) rents,
+	CASE
+		WHEN COUNT(*) > 8000 THEN "YES!!"
+		ELSE "no"
+	END AS prime_or_not
+FROM
+	rental
+GROUP BY
+	staff_id;
+```
+![image](https://github.com/user-attachments/assets/2cdaf95f-95b5-4dad-971c-8e371e008ef0)
 
 ---
 
