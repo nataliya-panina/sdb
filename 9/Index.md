@@ -119,8 +119,10 @@ GROUP BY c.customer_id
 
 POSTGRES | MySQL | Description
 ---|---|---
-B-Tree | + | B-trees can handle equality and range queries on data that can be sorted into some ordering.
-Hash | + | Hash indexes store a 32-bit hash code derived from the value of the indexed column. 
+B-Tree | + | B-деревья могут работать в условиях на равенство и в проверках диапазонов с данными, которые
+| | можно отсортировать в некотором порядке.
+Hash | + | Хеш-индексы хранят 32-битный хеш-код, полученный из значения индексированного столбца, по-этому хеш-индексы работают только с простыми условиями 
+ | | равенства
 GiST | - | GiST indexes are not a single kind of index, but rather an infrastructure within which many different
 indexing strategies can be implemented. 
 SP-GiST | - | SP-GiST permits implementation of a wide range of different non-balanced disk-based data structures,
