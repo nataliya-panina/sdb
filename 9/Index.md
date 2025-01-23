@@ -116,5 +116,11 @@ GROUP BY c.customer_id
 ---
 ## Решение
 
+POSTGRES Index | MySQL | Description
+---
+B-Tree | + | B-trees can handle equality and range queries on data that can be sorted into some ordering.
+Hash | + | Hash indexes store a 32-bit hash code derived from the value of the indexed column. 
+
+
 
 ---
