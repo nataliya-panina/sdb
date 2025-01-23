@@ -78,7 +78,14 @@ GROUP BY c.customer_id
 ;
 ```
 ```
--> Group aggregate: sum(p.amount)  (cost=12865 rows=599) (actual time=0.383..27.6 rows=391 loops=1)     -> Nested loop inner join  (cost=11265 rows=16005) (actual time=0.298..27.2 rows=634 loops=1)         -> Nested loop inner join  (cost=5663 rows=16005) (actual time=0.287..24.6 rows=634 loops=1)             -> Index scan on c using PRIMARY  (cost=61.2 rows=599) (actual time=0.125..0.384 rows=599 loops=1)             -> Filter: (cast(r.rental_date as date) = '2005-07-30')  (cost=6.68 rows=26.7) (actual time=0.0363..0.0403 rows=1.06 loops=599)                 -> Index lookup on r using idx_fk_customer_id (customer_id=c.customer_id)  (cost=6.68 rows=26.7) (actual time=0.0311..0.0372 rows=26.8 loops=599)         -> Filter: (cast(p.payment_date as date) = cast(r.rental_date as date))  (cost=0.25 rows=1) (actual time=0.00327..0.00386 rows=1 loops=634)             -> Index lookup on p using fk_payment_rental (rental_id=r.rental_id)  (cost=0.25 rows=1) (actual time=0.00301..0.00352 rows=1 loops=634) 
+-> Group aggregate: sum(p.amount)  (cost=12865 rows=599) (actual time=0.383..27.6 rows=391 loops=1)
+    -> Nested loop inner join  (cost=11265 rows=16005) (actual time=0.298..27.2 rows=634 loops=1)
+        -> Nested loop inner join  (cost=5663 rows=16005) (actual time=0.287..24.6 rows=634 loops=1)
+            -> Index scan on c using PRIMARY  (cost=61.2 rows=599) (actual time=0.125..0.384 rows=599 loops=1)
+            -> Filter: (cast(r.rental_date as date) = '2005-07-30')  (cost=6.68 rows=26.7) (actual time=0.0363..0.0403 rows=1.06 loops=599)
+                -> Index lookup on r using idx_fk_customer_id (customer_id=c.customer_id)  (cost=6.68 rows=26.7) (actual time=0.0311..0.0372 rows=26.8 loops=599)
+        -> Filter: (cast(p.payment_date as date) = cast(r.rental_date as date))  (cost=0.25 rows=1) (actual time=0.00327..0.00386 rows=1 loops=634)
+            -> Index lookup on p using fk_payment_rental (rental_id=r.rental_id)  (cost=0.25 rows=1) (actual time=0.00301..0.00352 rows=1 loops=634)
 ```
 
 ![image](https://github.com/user-attachments/assets/409f8c28-8a74-4514-9f57-3f0fc2554c7f)
