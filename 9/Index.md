@@ -106,9 +106,10 @@ Create INDEX payment_date ON payment(payment_date);
 EXPLAIN ANALYZE
 SELECT CONCAT(last_name, ' ', first_name) client, SUM(p.amount)
 FROM rental r
-JOIN payment p ON p.rental_id = r.rental_id
+--JOIN payment p ON p.rental_id = r.rental_id
+JOIN payment p ON p.payment_date = r.rental_date -- Так как теперь эти поля имеют индекс, то можно соединять таблицы по ним
 JOIN customer c ON c.customer_id = r.customer_id
-Where DATE(rental_date) = DATE(payment_date)
+-- Where DATE(rental_date) = DATE(payment_date)
 AND p.payment_date >= '2005-07-30' and p.payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
 GROUP BY c.customer_id
 ;
