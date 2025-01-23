@@ -18,8 +18,7 @@ FROM store st
 JOIN (SELECT store_id, COUNT(*) nc
 FROM customer
 GROUP BY store_id
-HAVING nc > 300) as cs
-ON st.store_id = cs.store_id
+HAVING nc > 300) as cs ON st.store_id = cs.store_id
 JOIN staff stf ON st.manager_staff_id = stf.staff_id
 JOIN address a ON st.address_id = a.address_id
 JOIN city ct ON a.city_id = ct.city_id
