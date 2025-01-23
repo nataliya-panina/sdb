@@ -121,7 +121,12 @@ POSTGRES | MySQL | Description
 ---|---|---
 B-Tree | + | B-trees can handle equality and range queries on data that can be sorted into some ordering.
 Hash | + | Hash indexes store a 32-bit hash code derived from the value of the indexed column. 
+GiST | - | GiST indexes are not a single kind of index, but rather an infrastructure within which many different
+indexing strategies can be implemented. 
+SP-GiST | - | SP-GiST permits implementation of a wide range of different non-balanced disk-based data structures,
+such as quadtrees, k-d trees, and radix trees (tries). 
+GIN | - | GIN indexes are “inverted indexes” which are appropriate for data values that contain multiple com-
+ponent values, such as arrays.
 
-
-
+![Документация](https://postgrespro.ru/docs/postgresql)
 ---
