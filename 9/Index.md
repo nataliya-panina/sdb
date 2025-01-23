@@ -119,16 +119,17 @@ GROUP BY c.customer_id
 
 POSTGRES | MySQL | Description
 ---|---|---
-B-Tree | + | B-деревья могут работать в условиях на равенство и в проверках диапазонов с данными, которые
-| | можно отсортировать в некотором порядке.
-Hash | + | Хеш-индексы хранят 32-битный хеш-код, полученный из значения индексированного столбца, по-этому хеш-индексы работают только с простыми условиями 
- | | равенства
-GiST | - | GiST indexes are not a single kind of index, but rather an infrastructure within which many different
-indexing strategies can be implemented. 
-SP-GiST | - | SP-GiST permits implementation of a wide range of different non-balanced disk-based data structures,
-such as quadtrees, k-d trees, and radix trees (tries). 
-GIN | - | GIN indexes are “inverted indexes” which are appropriate for data values that contain multiple com-
-ponent values, such as arrays.
+B-Tree | + | B-деревья могут работать в условиях на равенство и в проверках диапазонов с данными, 
+| | которые можно отсортировать в некотором порядке.
+Hash | + | Хеш-индексы хранят 32-битный хеш-код, полученный из значения индексированного столбца, 
+ | | по-этому хеш-индексы работают только с простыми условиями равенства
+GiST | - | GiST-индексы представляют собой не просто разновидность индексов, а инфраструктуру, позволя-
+ | | ющую реализовать много разных стратегий индексирования 
+SP-GiST | - | Индексы SP-GiST, как и GiST, предоставляют инфраструктуру, поддерживающую различные типы
+ | | поиска. SP-GiST позволяет организовывать на диске самые разные несбалансированные структуры
+ | | данных, такие как деревья квадрантов, k-мерные и префиксные деревья 
+GIN | - | GIN-индексы представляют собой «инвертированные индексы», в которых могут содержаться зна-
+ | | чения с несколькими ключами, например массивы.
 
 [Документация](https://postgrespro.ru/docs/postgresql)
 ---
