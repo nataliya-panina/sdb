@@ -9,7 +9,7 @@
 7. ![SQL-1](https://github.com/nataliya-panina/sdb/blob/main/7/SQL-1.md)
 8. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/8/SQL-2.md)
 9. ![Index](https://github.com/nataliya-panina/sdb/blob/main/9/Index.md)
-
-
+10. ![Репликация и масштабирование 1](https://github.com/nataliya-panina/sdb/blob/main/10/replication.md)
+11. ![Репликация и масштабирование 2](https://github.com/nataliya-panina/sdb/blob/main/11/replication-2.md)
 
 ![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
