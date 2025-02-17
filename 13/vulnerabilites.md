@@ -21,6 +21,11 @@
 
 ---
 ## Решение
+![image](https://github.com/user-attachments/assets/b51f434c-f4e6-4a04-bba6-c324b4a45b81)
+![image](https://github.com/user-attachments/assets/f672fd2d-72fa-4525-888b-c7d7a1cd47bf)
+
+На снимке с экрана видно, что в исследуемой ОС много открытых портов, 
+![image](https://github.com/user-attachments/assets/813222cc-ab36-4604-ae0b-37d90493b767)
 
 
 ---
@@ -35,3 +40,4 @@
 Как отвечает сервер?
 Приведите ответ в свободной форме.
 ## Решение
+
