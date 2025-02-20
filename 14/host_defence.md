@@ -38,7 +38,7 @@ touch secret.txt grand_secret.txt
 sudo apt install gparted // Установка утилиты для разбиения диска
 sudo apt install cryptsetup // Установка 
 cryptsetup --version
-
+```
 
 
 ---
