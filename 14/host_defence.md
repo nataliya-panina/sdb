@@ -34,10 +34,10 @@ touch secret.txt grand_secret.txt
 В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.  
 
 ## Решение
-LUKS, pour Linux Unified Key Setup, est le standard GNU/Linux pour le chiffrement des disques.
+LUKS - Linux Unified Key Setup, это стандарт GNU/Linux для шифрования дисков.
 ```
 sudo apt install gparted // Установка утилиты для разбиения диска
-sudo apt install cryptsetup // Установка 
+sudo apt install cryptsetup // Установка LUKS
 cryptsetup --version
 ```
 
