@@ -19,8 +19,10 @@ sudo adduser --encrypt-home cryptouser
 su cryptouser
 touch secret.txt grand_secret.txt
 ```
-Затем выхожу из сессии cryptouser и пытаюсь увидеть содержимое его каталога:
-![image](https://github.com/user-attachments/assets/1b0a33de-8b01-4a5d-9cca-636f6957c3df)
+
+![image](https://github.com/user-attachments/assets/1b0a33de-8b01-4a5d-9cca-636f6957c3df)  
+
+Затем выхожу из сессии cryptouser и пытаюсь увидеть содержимое его каталога;
 Из снимка с экрана видно, что только что созданные файлы были зашифрованы и они не видны другим пользователям.
 
 ---
