@@ -23,10 +23,9 @@
 ## Решение
 ![image](https://github.com/user-attachments/assets/406428df-8a8f-4ca8-82e4-8bedd0b21501)
 
+На снимке с экрана видно, что в исследуемой ОС 23 открытых порта, таких, как 21/ftp, 23/telnet, 53/DNS, 80/httpd, 3306/Mysql, и т.д
 
-На снимке с экрана видно, что в исследуемой ОС много открытых портов, таких, как 21/ftp, 23/telnet, соответствующие протоколы считаются устаревшими и ненадежными.
-Уязвимости:
-https://www.exploit-db.com/:  
+Уязвимости (https://www.exploit-db.com/):  
 
 - ![PostgreSQL 8.3.6 - Conversion Encoding Remote Denial of Service](https://www.exploit-db.com/exploits/32849)
   
