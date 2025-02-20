@@ -45,7 +45,7 @@
 Приведите ответ в свободной форме.
 
 ## Решение
-
+nmap --help:  
 ```
 moi@ubu:~$ nmap --help
 Nmap 7.95 ( https://nmap.org )
@@ -77,6 +77,13 @@ SCAN TECHNIQUES:
   -sY/sZ: SCTP INIT/COOKIE-ECHO scans
   -sO: IP protocol scan
   -b <FTP relay host>: FTP bounce scan
+
+sudo snap connect nmap:network-control
 ```
+SYN:  
+```
+nmap -sS <IP-addr>
+```
+![image](https://github.com/user-attachments/assets/8a16cab3-7d68-4601-bb2f-37742b65abed)
 
 
