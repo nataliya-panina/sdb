@@ -23,11 +23,13 @@
 ## Решение
 ![image](https://github.com/user-attachments/assets/406428df-8a8f-4ca8-82e4-8bedd0b21501)
 
-На снимке с экрана видно, что в исследуемой ОС 23 открытых порта, таких, как 21/ftp, 23/telnet, 53/DNS, 80/httpd, 3306/Mysql, и т.д
+На снимке с экрана видно, что в исследуемой ОС 23 открытых порта, таких, как 21/ftp, 22/ssh, 23/telnet, 53/DNS, 80/http, 3306/Mysql, и т.д
 
 Уязвимости (https://www.exploit-db.com/):  
 
-- ![PostgreSQL 8.3.6 - Conversion Encoding Remote Denial of Service](https://www.exploit-db.com/exploits/32849)
+- ![PostgreSQL 8.3.6 - Conversion Encoding Remote Denial of Service](https://www.exploit-db.com/exploits/32849)  
+- ![UnrealIRCd 3.x - Remote Denial of Service](https://www.exploit-db.com/exploits/27407)
+- 
   
 PORT     STATE SERVICE     VERSION
 21/tcp   open  ftp         vsftpd 2.3.4
