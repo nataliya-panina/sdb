@@ -50,9 +50,12 @@ sudo dd if=/dev/zero of=/dev/mapper/cryptodisk  # Форматирование �
 sudo mkfs.ext4 /dev/mapper/cryptodisk 
 ```
 ![image](https://github.com/user-attachments/assets/9e2d290f-5f4b-48e5-a271-b7701baceb39)
-
+```
+lsblk
+```
 ![image](https://github.com/user-attachments/assets/0e9f6226-05b1-43f6-9e19-a5ee11672784)
 
+Монтирование «открытого» раздела:
 ```
 mkdir .secret
 sudo mount /dev/mapper/cryptodisk .secret/
