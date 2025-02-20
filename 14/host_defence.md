@@ -8,8 +8,16 @@
 В качестве ответа пришлите снимки экрана домашнего каталога пользователя с исходными и зашифрованными данными.  
 
 ## Решение
+```
+sudo apt install ecryptfs-utils -y
+sudo adduser --encrypt-home cryptouser
+su cryptouser
+```
+![image](https://github.com/user-attachments/assets/7e1282c2-3a5a-451b-87d3-8cda14591cf4)
 
+```
 
+```
 
 ---
 ## Задание 2
