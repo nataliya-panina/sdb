@@ -13,5 +13,13 @@ sudo parted /dev/sdb
 (parted) mkpart primary ext4 1MB 101MB                                    
 (parted) print   
 ```
-![image](https://github.com/user-attachments/assets/bffcab20-d9e8-4699-9757-60f9679e27e2)
+```
+Modèle : VMware, VMware Virtual S (scsi)
+Disque /dev/sdb : 21,5GB
+Taille des secteurs (logiques/physiques) : 512B/512B
+Table de partitions : gpt
+Drapeaux de disque : 
 
+Numéro  Début   Fin    Taille  Système de fichiers  Nom      Drapeaux
+ 1      1049kB  101MB  99,6MB  ext4                 primary
+```
