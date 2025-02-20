@@ -11,13 +11,15 @@
 ```
 sudo apt install ecryptfs-utils -y
 sudo adduser --encrypt-home cryptouser
+```
+![image](https://github.com/user-attachments/assets/9fd47957-23d2-415a-a4a5-13133f399b42)
+
+```
 su cryptouser
-```
-![image](https://github.com/user-attachments/assets/7e1282c2-3a5a-451b-87d3-8cda14591cf4)
-
+touch secret.txt grand_secret.txt
 ```
 
-```
+![image](https://github.com/user-attachments/assets/1b0a33de-8b01-4a5d-9cca-636f6957c3df)
 
 ---
 ## Задание 2
