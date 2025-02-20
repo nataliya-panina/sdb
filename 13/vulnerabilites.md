@@ -82,8 +82,26 @@ sudo snap connect nmap:network-control
 ```
 SYN:  
 ```
-nmap -sS <IP-addr>
+sudo nmap -sS 192.168.115.132
+
 ```
 ![image](https://github.com/user-attachments/assets/8a16cab3-7d68-4601-bb2f-37742b65abed)
 
+FIN:
+```
+nmap -sF 192.168.115.132
+```
 
+![image](https://github.com/user-attachments/assets/fd5e43b9-617c-4d29-93ea-13693fd57096)  
+
+Xmas:  
+```
+nmap -sX 192.168.115.132
+```
+![image](https://github.com/user-attachments/assets/7a8b3cab-2a60-4590-842f-c36f1df964aa)
+
+UDP:  
+```
+nmap -sU 192.168.115.132
+```
+![image](https://github.com/user-attachments/assets/cb06bd28-ae09-4766-8d95-adc58b08e421)
