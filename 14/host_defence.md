@@ -34,6 +34,7 @@ touch secret.txt grand_secret.txt
 В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.  
 
 ## Решение
+LUKS, pour Linux Unified Key Setup, est le standard GNU/Linux pour le chiffrement des disques.
 ```
 sudo apt install gparted // Установка утилиты для разбиения диска
 sudo apt install cryptsetup // Установка 
@@ -43,7 +44,27 @@ cryptsetup --version
 ![image](https://github.com/user-attachments/assets/0eaf50f6-c189-4972-a2d5-ee4050b96496)
 
 ![image](https://github.com/user-attachments/assets/9e2d290f-5f4b-48e5-a271-b7701baceb39)
+```
+sudo cryptsetup -y -v --type luks2 luksFormat /dev/sdb1 # Форматирование раздела
+sudo cryptsetup luksOpen /dev/sdb1 cryptodisk # Монтирование раздела
+ls /dev/mapper/cryptodisk
+sudo dd if=/dev/zero of=/dev/mapper/cryptodisk  # Форматирование раздела
+sudo mkfs.ext4 /dev/mapper/cryptodisk 
+```
 ![image](https://github.com/user-attachments/assets/0e9f6226-05b1-43f6-9e19-a5ee11672784)
+
+```
+mkdir .secret
+sudo mount /dev/mapper/cryptodisk .secret/
+```
+![image](https://github.com/user-attachments/assets/87317c69-3dc8-4d33-8b46-1599206e243b)
+
+Завершение работы:
+```
+moi@ubu:~$ sudo umount .secret
+moi@ubu:~$ sudo cryptsetup luksClose cryptodisk
+```
+![image](https://github.com/user-attachments/assets/a76246d4-1199-492a-91e1-b83104f432fd)
 
 ---
 Дополнительные задания (со звёздочкой*)
