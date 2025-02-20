@@ -102,7 +102,8 @@ Xmas:
 ```
 nmap -sX 192.168.115.132
 ```
-![image](https://github.com/user-attachments/assets/7a8b3cab-2a60-4590-842f-c36f1df964aa)
+![image](https://github.com/user-attachments/assets/befa6762-cae2-4e66-822d-d99b4aaaf35e)
+
 В этом режиме отправляются три флага: FIN, PSH и URG:
 
 UDP:  
@@ -111,4 +112,4 @@ nmap -sU 192.168.115.132
 ```
 ![image](https://github.com/user-attachments/assets/cb06bd28-ae09-4766-8d95-adc58b08e421)  
 
-В отличие от tcp, протокол udp не требует синхронизации, поэтому при установлении соединения не отправляются параметры окна.
+В отличие от tcp, протокол udp не требует синхронизации, поэтому при установлении соединения не отправляются параметры tcp-окна.
