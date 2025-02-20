@@ -40,6 +40,10 @@ sudo apt install cryptsetup // Установка
 cryptsetup --version
 ```
 
+![image](https://github.com/user-attachments/assets/0eaf50f6-c189-4972-a2d5-ee4050b96496)
+
+![image](https://github.com/user-attachments/assets/9e2d290f-5f4b-48e5-a271-b7701baceb39)
+![image](https://github.com/user-attachments/assets/0e9f6226-05b1-43f6-9e19-a5ee11672784)
 
 ---
 Дополнительные задания (со звёздочкой*)
