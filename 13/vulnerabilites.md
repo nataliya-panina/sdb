@@ -26,7 +26,7 @@
 На снимке с экрана видно, что в исследуемой ОС 23 открытых порта, таких, как 21/ftp, 22/ssh, 23/telnet, 53/DNS, 80/http, 3306/Mysql, и т.д
 
 Уязвимости (https://www.exploit-db.com/):  
-
+---
 - ![PostgreSQL 8.3.6 - Conversion Encoding Remote Denial of Service](https://www.exploit-db.com/exploits/32849)  - Exploiting this issue may allow attackers to terminate connections to the PostgreSQL server, denying service to legitimate users.  
 - ![UnrealIRCd 3.x - Remote Denial of Service](https://www.exploit-db.com/exploits/27407) -  A remote attacker may exploit this issue to deny service for legitimate users.  
 - ![UnrealIRCd 3.2.8.1 - Remote Downloader/Execute](https://www.exploit-db.com/exploits/13853) - Remote Downloader/Execute Trojan
