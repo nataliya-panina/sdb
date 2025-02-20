@@ -30,6 +30,10 @@ touch secret.txt grand_secret.txt
 В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.  
 
 ## Решение
+```
+sudo apt install gparted // Установка утилиты для разбиения диска
+sudo apt install cryptsetup // Установка 
+cryptsetup --version
 
 
 
