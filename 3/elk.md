@@ -101,3 +101,4 @@ sudo nano /etc/nginx/nginx.conf ==> access_log: syslog:server=192.168.115.128:54
 ## Решение
 
 ---
+https://github.com/ortariot/neto-elk
