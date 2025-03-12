@@ -32,9 +32,13 @@ services:
     depends_on:
     - elasticsearch
 ```
-
-pypelines.yml
+config.yml
+```yml
+http.host: 0.0.0.0
+xpack.monitoring.enabled: false
 ```
+pypelines.yml
+```yml
 - pipeline.id: service_stamped_json_logs
   pipeline.workers: 1
   pipeline.batch.size: 1
