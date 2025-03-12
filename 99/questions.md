@@ -28,7 +28,7 @@ org.jruby.exceptions.SystemExit: (SystemExit) exit
 ![image](https://github.com/user-attachments/assets/bfabc6f3-dd05-47e4-934b-3c4297f2ba7c)
 
 
-Я пыталась ограничивать "LS_JAVA_OPTS: -Xms512m -Xmx512m", 
+Я пыталась ограничивать "LS_JAVA_OPTS: -Xms512m -Xmx512m", с тем же результатом. Ниже приведены конфигурационные файлы. Если кто знает, в чем тут дело, помогите пожалуйста!!!
 
 ---
 compose.yml
@@ -54,7 +54,7 @@ services:
     image: logstash:8.12.2
     environment:
       ES_HOST: "elasticsearch:9200"
-      
+     # LS_JAVA_OPTS: -Xms512m -Xmx512m
     ports:
     - "5044:5044/udp"
     volumes:
