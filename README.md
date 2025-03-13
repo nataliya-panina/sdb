@@ -5,12 +5,14 @@
 2. ![Кэширование](https://github.com/nataliya-panina/sdb/blob/main/2/cash.md)
 3. ![ELK](https://github.com/nataliya-panina/sdb/blob/main/3/elk.md)
 4. ![Очереди RabbitMQ](https://github.com/nataliya-panina/sdb/blob/main/4/rabbitMQ.md)
-5. ![Базы данных](https://github.com/nataliya-panina/sdb/blob/main/5/Database.md)
-6. ![DDL/DML](https://github.com/nataliya-panina/sdb/blob/main/6/ddl_dml.md)
-7. ![SQL-1](https://github.com/nataliya-panina/sdb/blob/main/7/SQL-1.md)
-8. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/8/SQL-2.md)
-9. ![Index](https://github.com/nataliya-panina/sdb/blob/main/9/Index.md)
-10. ![Репликация и масштабирование 1](https://github.com/nataliya-panina/sdb/blob/main/10/replication.md)
-11. ![Репликация и масштабирование 2](https://github.com/nataliya-panina/sdb/blob/main/11/replication-2.md)
+## Реляционные базы данных и ажминистрирование баз данных
+6. ![Базы данных](https://github.com/nataliya-panina/sdb/blob/main/5/Database.md)
+7. ![DDL/DML](https://github.com/nataliya-panina/sdb/blob/main/6/ddl_dml.md)
+8. ![SQL-1](https://github.com/nataliya-panina/sdb/blob/main/7/SQL-1.md)
+9. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/8/SQL-2.md)
+10. ![Index](https://github.com/nataliya-panina/sdb/blob/main/9/Index.md)
+11. ![Репликация и масштабирование 1](https://github.com/nataliya-panina/sdb/blob/main/10/replication.md)
+12. ![Репликация и масштабирование 2](https://github.com/nataliya-panina/sdb/blob/main/11/replication-2.md)
+## Информационная безопасность
 
 ![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
