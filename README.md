@@ -18,8 +18,7 @@
 13. ![Уязвимости и атаки на информационные системы](https://github.com/nataliya-panina/sdb/blob/main/13/vulnerabilites.md)
 14. ![Защита хоста](https://github.com/nataliya-panina/sdb/blob/main/14/host_defence.md)
 15. ![Защита сети](https://github.com/nataliya-panina/sdb/blob/main/15/net_defence.md)
-16. ![Лучшие практики современной информационной безопасности](https://github.com/nataliya-panina/sdb/blob/main/16/best_practice.md)
-
 
 ## Дополнительная литература
+![Практическое применение ELK. Настраиваем logstash](https://habr.com/ru/articles/451264/)
 ![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
