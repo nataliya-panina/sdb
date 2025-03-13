@@ -20,5 +20,5 @@
 15. ![Защита сети](https://github.com/nataliya-panina/sdb/blob/main/15/net_defence.md)
 
 ## Дополнительная литература
-![Практическое применение ELK. Настраиваем logstash](https://habr.com/ru/articles/451264/)
-![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
+- ![Практическое применение ELK. Настраиваем logstash](https://habr.com/ru/articles/451264/)
+- ![Статья по транзакциям](https://sql-ex.ru/blogs/?/Rabota_s_tranzakciJami_v_MySQL.html)
