@@ -31,38 +31,7 @@ services:
 docker compose up -d
 ```
 ![image](https://github.com/user-attachments/assets/4cc14404-aaef-4246-8659-ae9f4ca0542b)
-```yaml
-services:
-  rabbitmq1:
-    image: rabbitmq:3.10.7-management
-    hostname: rabbitmq1
-    restart: always
-    environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER} # переменные окружения описаны в файле .env
-      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-      - RABBITMQ_CONFIG_FILE=/config/rabbitmq
-      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
-      - RABBITMQ_NODE_PORT=5672
-    volumes:
-      - ./config:/config
-    ports:
-      - 15672:15672 # порт для обращения через вебинтерфейс
-      - 5672:5672 # порт для общения с приложениями
 
-  rabbitmq2:
-    image: rabbitmq:3.10.7-management
-    hostname: rabbitmq2
-    restart: always
-    environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER} # переменные окружения описаны в файле .env
-      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-      - RABBITMQ_CONFIG_FILE=/config/rabbitmq
-      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE}
-      - RABBITMQ_NODE_PORT=5672
-    volumes:
-      - ./config:/config
-```
-![Capture d’écran du 2025-03-22 11-12-13](https://github.com/user-attachments/assets/b20df099-be6a-4284-afee-8925d04e9a95)
 ---
 # Задание 2. Отправка и получение сообщений
 Используя приложенные скрипты, проведите тестовую отправку и получение сообщения. Для отправки сообщений необходимо запустить скрипт producer.py.
