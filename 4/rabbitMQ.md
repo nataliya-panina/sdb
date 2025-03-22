@@ -37,7 +37,7 @@ docker compose up -d
 Используя приложенные скрипты, проведите тестовую отправку и получение сообщения. Для отправки сообщений необходимо запустить скрипт producer.py.
 
 Для работы скриптов вам необходимо установить Python версии 3 и библиотеку Pika. Также в скриптах нужно указать IP-адрес машины, на которой запущен RabbitMQ, заменив localhost на нужный IP.
-```
+```bash
 $ pip install pika
 ```
 
@@ -49,6 +49,17 @@ $ pip install pika
 Для закрепления материала можете попробовать модифицировать скрипты, чтобы поменять название очереди и отправляемое сообщение.
 
 ## Решение
+```bash
+pip install pika
+# Создание и активация виртуального окружения python:
+python3 -m venv venv
+source venv/bin/activate
+python producer.py
+```
+![image](https://github.com/user-attachments/assets/f2908b0f-71df-4182-8f9c-19ad28475e45)
+
+```
+python consumer.py
 ![image](https://github.com/user-attachments/assets/660480df-4c25-42d7-96de-2dddbccd2723)
 
 
