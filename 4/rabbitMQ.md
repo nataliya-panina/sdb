@@ -56,14 +56,15 @@ python3 -m venv venv
 source venv/bin/activate
 python producer.py
 ```
-![image](https://github.com/user-attachments/assets/f2908b0f-71df-4182-8f9c-19ad28475e45)
+![rabbit_web_queue](https://github.com/user-attachments/assets/f2908b0f-71df-4182-8f9c-19ad28475e45)
 
 ```
 python producer.py
 python consumer.py
 ```
 
-![image](https://github.com/user-attachments/assets/660480df-4c25-42d7-96de-2dddbccd2723)
+![terminal_producer_consumer](https://github.com/user-attachments/assets/6ec4dc57-bef5-4c46-b348-53ad1e2464a9)
+
 
 
 ---
