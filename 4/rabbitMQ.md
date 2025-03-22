@@ -80,6 +80,7 @@ $ pip install pika
 Для закрепления материала можете попробовать модифицировать скрипты, чтобы поменять название очереди и отправляемое сообщение.
 
 ## Решение
+[producer.py](https://github.com/nataliya-panina/sdb/blob/main/4/producer.py), [consumer.py](https://github.com/nataliya-panina/sdb/blob/main/4/consumer.py)
 ```bash
 pip install pika
 # Создание и активация виртуального окружения python:
