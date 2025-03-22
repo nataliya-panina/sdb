@@ -31,8 +31,7 @@ services:
 docker compose up -d
 ```
 ![image](https://github.com/user-attachments/assets/4cc14404-aaef-4246-8659-ae9f4ca0542b)
-
-
+![Capture d’écran du 2025-03-22 11-12-13](https://github.com/user-attachments/assets/b20df099-be6a-4284-afee-8925d04e9a95)
 ---
 # Задание 2. Отправка и получение сообщений
 Используя приложенные скрипты, проведите тестовую отправку и получение сообщения. Для отправки сообщений необходимо запустить скрипт producer.py.
@@ -41,6 +40,7 @@ docker compose up -d
 ```
 $ pip install pika
 ```
+
 
 Зайдите в веб-интерфейс, найдите очередь под названием hello и сделайте скриншот. После чего запустите второй скрипт consumer.py и сделайте скриншот результата выполнения скрипта
 
