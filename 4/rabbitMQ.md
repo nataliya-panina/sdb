@@ -125,7 +125,14 @@ $ rabbitmqadmin get queue='hello'
 Приложите скриншот результата работы второго скрипта.
 
 ## Решение
-
+Для присоединения к кластеру нужно выполнить следующую последоваиельность операций на ведомой ноде:
+```
+docker exec -it rabbit-rabbitmq2-1 rabbitmqctl stop_app
+docker exec -it rabbit-rabbitmq2-1 rabbitmqctl reset
+docker exec -it rabbit-rabbitmq2-1 rabbitmqctl join_cluster rabbit@rabbitmq1
+docker exec -it rabbit-rabbitmq2-1 rabbitmqctl start_app
+docker exec -it rabbit-rabbitmq2-1 rabbitmqctl cluster_status
+```
 ---
 ### Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
