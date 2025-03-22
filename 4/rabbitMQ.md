@@ -60,6 +60,8 @@ python producer.py
 
 ```
 python consumer.py
+```
+
 ![image](https://github.com/user-attachments/assets/660480df-4c25-42d7-96de-2dddbccd2723)
 
 
