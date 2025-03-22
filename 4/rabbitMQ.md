@@ -94,13 +94,23 @@ $ rabbitmqadmin get queue='hello'
 Приложите скриншот результата работы второго скрипта.
 
 ## Решение
-
-
+```
+rabbitmqctl cluster_status
+```
 ![image](https://github.com/user-attachments/assets/9d9d30bf-20b2-4e15-b2ba-6661b9879c09)
 ![image](https://github.com/user-attachments/assets/ea54f5c2-2f11-42fb-88c1-5b586d7fde6e)
+
+```
+rabbitmqadmin get queue='hello'
+```
 ![image](https://github.com/user-attachments/assets/0fe8a281-4f10-4554-8899-485ad47d4522)
 ![image](https://github.com/user-attachments/assets/ce83cc5d-5ed7-498c-b2d7-a1e1820b1519)
+```
+rabbitmqctl stop_app
+rabbitmqadmin get queue='hello'
+```
 ![image](https://github.com/user-attachments/assets/3bcbc0fb-72a7-46ef-ac98-d834c78b3a35)
+![image](https://github.com/user-attachments/assets/7587fe67-86aa-4707-8b58-05c2668412bb)
 
 
 ---
