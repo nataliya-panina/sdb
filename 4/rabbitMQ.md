@@ -59,6 +59,7 @@ python producer.py
 ![image](https://github.com/user-attachments/assets/f2908b0f-71df-4182-8f9c-19ad28475e45)
 
 ```
+python producer.py
 python consumer.py
 ```
 
