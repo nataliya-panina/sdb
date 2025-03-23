@@ -49,7 +49,7 @@ $ pip install pika
 Для закрепления материала можете попробовать модифицировать скрипты, чтобы поменять название очереди и отправляемое сообщение.
 
 ## Решение
-[producer.py](https://github.com/nataliya-panina/sdb/blob/main/4-rabbitmq/producer.py), [consumer.py](https://github.com/nataliya-panina/sdb/blob/main/4-rabbitmq/consumer.py)
+[producer.py](https://github.com/nataliya-panina/sdb/blob/main/04-rabbitmq/producer.py), [consumer.py](https://github.com/nataliya-panina/sdb/blob/main/04-rabbitmq/consumer.py)
 ```bash
 pip install pika
 # Создание и активация виртуального окружения python:
