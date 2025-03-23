@@ -55,7 +55,7 @@ SHOW GRANTS for 'sys_temp';
 ![image](https://github.com/user-attachments/assets/a649f342-bea9-4b82-9f0c-713c7663538e)
 
 
-![Простыня](https://github.com/nataliya-panina/sdb/blob/main/6/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%8B%D0%BD%D1%8F)
+![Простыня](https://github.com/nataliya-panina/sdb/blob/main/06-ddl-dml/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%8B%D0%BD%D1%8F)
 
 ## Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
