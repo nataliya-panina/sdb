@@ -8,10 +8,10 @@
 4. ![Очереди RabbitMQ](https://github.com/nataliya-panina/sdb/blob/main/04-rabbitmq/rabbitMQ.md)
 ## Модуль "Реляционные базы данных и администрирование баз данных"
 5. ![Базы данных](https://github.com/nataliya-panina/sdb/blob/main/05-db/Database.md)
-6. ![DDL/DML](https://github.com/nataliya-panina/sdb/blob/main/06-ddl-dml/ddl_dml.md)
+6. ![Работа с данными. DDL/DML](https://github.com/nataliya-panina/sdb/blob/main/06-ddl-dml/ddl_dml.md)
 7. ![SQL-1](https://github.com/nataliya-panina/sdb/blob/main/07-sql/SQL-1.md)
 8. ![SQL-2](https://github.com/nataliya-panina/sdb/blob/main/08-sql/SQL-2.md)
-9. ![Index](https://github.com/nataliya-panina/sdb/blob/main/09-index/Index.md)
+9. ![Индексы](https://github.com/nataliya-panina/sdb/blob/main/09-index/Index.md)
 10. ![Репликация и масштабирование 1](https://github.com/nataliya-panina/sdb/blob/main/10-replication/README.md)
 11. ![Репликация и масштабирование 2](https://github.com/nataliya-panina/sdb/blob/main/11-replication/README.md)
 12. ![Резервное копирование](https://github.com/nataliya-panina/sdb/blob/main/12-backup/README.md)
