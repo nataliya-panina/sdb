@@ -32,25 +32,28 @@ password|author|manager
 
 Каждую таблицу можно разбить на несколько таблиц и хранить эти таблицы отдельно, на разных серверах:
 
-Users|-->|contacts|acount
+Users  
+
+contacts|acount
 ---|
-id||user_id|user_id
-...||address|login
+user_id|user_id
+address|login
 
-
-books|-->|genre|author
+Books   
+genre|author
 ---|
-id||book_id|book_id
-...||genre|author
+book_id|book_id
+genre|author
 
 
-stores|-->|contacts|staff
+stores  
+contacts|staff
 ---|
-id||store_id|store_id
-...||address|manager
+store_id|store_id
+address|manager
 
 
-2. Горизонтальный шардинг:  
+1. Горизонтальный шардинг:  
 
 Так как эти таблицы могут быстро разрастаться, имеет смысл применять к ним горизонтальный шардинг, например, по id, по географическому местоположению, жанру, авторам, и т.д.
 
