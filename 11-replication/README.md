@@ -35,20 +35,20 @@ password|author|manager
 Users  
 
 contacts|acount
----|
+---|---
 user_id|user_id
 address|login
 
 Books   
 genre|author
----|
+---|---
 book_id|book_id
 genre|author
 
 
 stores  
 contacts|staff
----|
+---|---
 store_id|store_id
 address|manager
 
