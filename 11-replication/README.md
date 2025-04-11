@@ -37,15 +37,18 @@ Users|-->|contacts|acount
 id||user_id|user_id
 ...||address|login
 
+
 books|-->|genre|author
 ---|
 id||book_id|book_id
 ...||genre|author
 
+
 stores|-->|contacts|staff
 ---|
 id||store_id|store_id
 ...||address|manager
+
 
 2. Горизонтальный шардинг:  
 
