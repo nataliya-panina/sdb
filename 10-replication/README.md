@@ -8,7 +8,69 @@
 
 ## Решение
 
+см. файл compose.yml  
 
+```bash
+docker compose up -d
+```
+
+Конфигурация мастера:  
+```bash
+docker exec -it replication-master bash
+bash-4.4# mysql -uroot -p
+```
+
+```sql
+mysql> ALTER USER 'replication_user'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'replication_password';
+er'@'%';
+FLUSH PRIVILEGES;
+SHOW MASTER STATUS;Query OK, 0 rows affected (0.01 sec)
+
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW MASTER STATUS;
++------------------+----------+--------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+------------------+-------------------+
+| mysql-bin.000003 |      851 |              |                  |                   |
++------------------+----------+--------------+------------------+-------------------+
+1 row in set, 1 warning (0.00 sec)
+```
+Конфигурация ведомого сервера:  
+```bash
+docker exec -it replication-slave bash
+bash-4.4# mysql -uroot -p
+```
+on replication-slave:
+```sql
+CHANGE MASTER TO
+    ->   MASTER_HOST='replication-master',
+    ->   MASTER_USER='replication_user',
+    ->   MASTER_PASSWORD='replication_password',
+    ->   MASTER_LOG_FILE='mysql-bin.000003',
+    ->   MASTER_LOG_POS=851;
+
+START SLAVE;
+```
+Проверка:  
+
+on replication-master:  
+```sql
+use my_db;
+create table user (id int);
+insert into user values (1);
+select * from user;
+```
+on replication-slave:  
+```sql
+use my_db;
+select * from user;
+```
+[шпаргалка](https://dev.to/siddhantkcode/how-to-set-up-a-mysql-master-slave-replication-in-docker-4n0a)
 ----
 
 ## Задание 2
